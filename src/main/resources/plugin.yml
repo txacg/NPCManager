@@ -1,0 +1,15 @@
+name: NPCManager
+version: 0.1
+main: moe.txacg.npcmanager.NPCManager
+description: "Multifunction NPC management tools."
+authors: Txacg
+website: "https://github.com/txacg/NPCManager"
+depend: []
+
+commands:
+  npcmanager:
+    description: The command for NPCManager
+    aliases: nm
+    permission: nm.command
+    permission-message: "You do not have the required permission: <permission>"
+    useage: /<command>
