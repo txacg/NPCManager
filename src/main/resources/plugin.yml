@@ -2,9 +2,8 @@ name: NPCManager
 version: 0.1
 main: moe.txacg.npcmanager.NPCManager
 description: "Multifunction NPC management tools."
-authors: Txacg
+author: Txacg
 website: "https://github.com/txacg/NPCManager"
-depend: []
 
 commands:
   npcmanager:
