@@ -3,6 +3,8 @@ package moe.txacg.npcmanager;
 import cat.nyaa.nyaacore.configuration.PluginConfigure;
 import org.bukkit.plugin.java.JavaPlugin;
 
+
+
 public class Configuration extends PluginConfigure{
 
     private final NPCManager plugin;
@@ -12,6 +14,12 @@ public class Configuration extends PluginConfigure{
 
     @Serializable
     public String language = "en_US";
+    @Serializable
+    public Boolean allow_playernpc = false;
+    @Serializable
+    public Boolean use_mysql = true;
+
+
 
 
 

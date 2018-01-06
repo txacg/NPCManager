@@ -11,4 +11,39 @@ commands:
     aliases: nm
     permission: nm.command
     permission-message: "You do not have the required permission: <permission>"
-    useage: /<command>
+    useage: "/<command> [SubCommand...] [Arguments...] or /<command> help"
+
+permissions:
+  nm.command:
+    description: Base permission node for commands
+    default: true
+  nm.spawn:
+    description:
+    default: op
+  nm.info:
+    description:
+    default: op
+  nm.remove:
+    description:
+    default: op
+  nm.edit.add:
+    description:
+    default: op
+  nm.edit.del:
+    description:
+    default: op
+  nm.me.spawn:
+    description: Spawn player's player NPC
+    default: true
+  nm.me.remove:
+    description: Remove player's player NPC
+    default: true
+  nm.import:
+    description: Import Shopkeeper's save.yml and save to database
+    default: op
+  nm.reload:
+    description: Reload permission
+    default: op
+  nm.version:
+    description: View plugin version
+    default: true

@@ -1,8 +1,6 @@
 package moe.txacg.npcmanager;
 
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.event.HandlerList;
 
@@ -11,13 +9,22 @@ public class NPCManager extends JavaPlugin{
 
     public static NPCManager instance = null;
     public Configuration cfg = null;
+    public I18n i18n;
+    public CommandHandler commandHandler;
 
     @Override
     public void onEnable(){
 
         instance = this;
+
         cfg = new Configuration(this);
         cfg.load();
+
+        i18n = new I18n(this, cfg.language);
+
+        commandHandler = new CommandHandler(this, i18n);
+        getCommand("npcmanager").setExecutor(commandHandler);
+        getCommand("npcmanager").setTabCompleter((TabCompleter) commandHandler);
     }
 
     @Override
@@ -25,6 +32,10 @@ public class NPCManager extends JavaPlugin{
 
         HandlerList.unregisterAll(this);
         getServer().getScheduler().cancelTasks(this);
+
+        getCommand("npcmanager").setExecutor(null);
+        getCommand("npcmanager").setTabCompleter(null);
+
         cfg.save();
     }
 
@@ -32,20 +43,13 @@ public class NPCManager extends JavaPlugin{
 
         HandlerList.unregisterAll(this);
         getServer().getScheduler().cancelTasks(this);
+
+        getCommand("npcmanager").setExecutor(null);
+        getCommand("npcmanager").setTabCompleter(null);
+
+        i18n.load();
+
         onEnable();
     }
 
-    @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args){
-
-        if (command.getName().equalsIgnoreCase("npcmanager") && sender instanceof Player){
-            Player player = (Player) sender;
-            player.sendRawMessage("Hi!" + player.getName() + "~");
-
-            return true;
-        }
-
-
-        return false;
-    }
 }
