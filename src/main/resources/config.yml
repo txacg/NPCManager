@@ -1,5 +1,24 @@
+# ----------------------------------------
 # Basic plugin & database config
 # 基礎的插件與資料庫設定
-
+# ----------------------------------------
 # 語言設定
 language: en_US
+#
+# 是否允許玩家創建玩家NPC
+allow_playernpc: false
+#
+# 使用的資料庫類型
+use_mysql: true
+#
+# mysql資料庫帳號
+mysql_user: root
+#
+# mysql資料庫密碼
+mysql_password:
+#
+# mysql資料庫IP
+mysql_ip: 127.0.0.1
+#
+# mysql資料庫port
+mysql_port: 3306

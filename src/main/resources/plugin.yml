@@ -1,6 +1,7 @@
 name: NPCManager
-version: 0.1
+version: 0.2
 main: moe.txacg.npcmanager.NPCManager
+depend: [NyaaCore]
 description: "Multifunction NPC management tools."
 author: Txacg
 website: "https://github.com/txacg/NPCManager"

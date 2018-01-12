@@ -18,8 +18,10 @@ public class Configuration extends PluginConfigure{
     public Boolean allow_playernpc = false;
     @Serializable
     public Boolean use_mysql = true;
-
-
+    @Serializable
+    public String mysql_user = "root";
+    @Serializable
+    public String mysql_password = "";
 
 
 
